@@ -3,13 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Evie Viner — Portfolio</title>
+
+  <title>Tom Macauley — Portfolio</title>
   <meta name="description" content="Personal website and portfolio for Tom Macauley — mathematics student and educator." />
-  <meta property="og:title" content="Evie Viner — Portfolio" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tom Macauley — Portfolio" />
   <meta property="og:description" content="Personal website and portfolio for Tom Macauley — mathematics student and educator." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="" />
+  <meta property="og:url" content="https://tommacaulay.github.io" />
+  <meta property="og:image" content="https://tommacaulay.github.io/og-image.jpg" />
+
+  <!-- Canonical / theme / icon -->
+  <link rel="canonical" href="https://tommacaulay.github.io" />
   <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="/favicon.ico" />
+
   <style>
     /* ---- Base & Theme ---- */
     :root{
@@ -25,9 +34,10 @@
     html{scroll-behavior:smooth}
     body{
       margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text); background: radial-gradient(1200px 600px at 10% -10%, #1d2548 0%, transparent 60%),
-                         radial-gradient(800px 400px at 110% 10%, #172040 0%, transparent 55%),
-                         linear-gradient(180deg, #0a0f1f 0%, #0b1020 100%);
+      color:var(--text); background:
+        radial-gradient(1200px 600px at 10% -10%, #1d2548 0%, transparent 60%),
+        radial-gradient(800px 400px at 110% 10%, #172040 0%, transparent 55%),
+        linear-gradient(180deg, #0a0f1f 0%, #0b1020 100%);
       overflow-x:hidden;
     }
     a{color:var(--accent); text-decoration:none}
@@ -108,9 +118,10 @@
 <body>
   <div class="grid-bg" aria-hidden="true"></div>
   <a class="skip" href="#main">Skip to content</a>
+
   <header>
     <nav class="container nav" aria-label="Primary">
-      <div class="brand">EVIE <b>VINER</b></div>
+      <div class="brand">TOM <b>MACAULEY</b></div>
       <div class="link-row small">
         <a href="#research">Research</a>
         <a href="#teaching">Teaching</a>
@@ -126,7 +137,7 @@
     <section class="hero container" id="home" aria-label="Intro">
       <div class="hero-inner">
         <span class="kicker">Mathematics • Durham University</span>
-        <h1>Hi, I’m <strong>Tom Macauley</strong>. I like elegant math, clear explanations, and well‑designed ideas.</h1>
+        <h1>Hi, I’m <strong>Tom Macauley</strong>. I like elegant math, clear explanations, and well-designed ideas.</h1>
         <p class="lead">Currently exploring probabilistic processes, PDEs and mathematical physics. I also run an online math tutoring business.</p>
         <div class="hero-actions">
           <a class="btn" href="#research" aria-label="Jump to research">View research</a>
@@ -146,7 +157,7 @@
         <div class="card two ringed">
           <div style="padding:24px">
             <h2 id="research-title">What I’m working on</h2>
-            <p>Recent work spans <strong>Markov chains</strong> on trees, <strong>WKB analysis</strong> for pattern‑forming PDEs (Swift–Hohenberg), and algebraic structures behind <strong>polylogarithm identities</strong>. I enjoy problems where asymptotics, geometry, and probability meet.</p>
+            <p>Recent work spans <strong>Markov chains</strong> on trees, <strong>WKB analysis</strong> for pattern-forming PDEs (Swift–Hohenberg), and algebraic structures behind <strong>polylogarithm identities</strong>. I enjoy problems where asymptotics, geometry, and probability meet.</p>
             <div class="list">
               <div>
                 <strong>Transience on infinite trees.</strong>
@@ -158,13 +169,13 @@
               </div>
               <div>
                 <strong>Trilogarithm symmetries.</strong>
-                <div class="muted small">Exploring cancellations in Goncharov’s 22‑term relation.</div>
+                <div class="muted small">Exploring cancellations in Goncharov’s 22-term relation.</div>
               </div>
             </div>
             <div class="link-row" style="margin-top:12px">
               <a href="#visuals">See interactive sketches</a>
               <a href="#writing">Read notes & posts</a>
-              <a href="mailto:contact@evieviner.com">Email questions</a>
+              <a href="mailto:hello@tommacaulay.com">Email questions</a>
             </div>
           </div>
           <div style="background:
@@ -174,7 +185,7 @@
             <div class="muted" style="padding:24px; text-align:center">
               <div class="badge" style="margin-bottom:12px">papers & talks</div>
               <p class="small">Link your arXiv, Google Scholar, or slides here.
-              <br/>e.g. <a href="#" aria-label="Example external link">google scholar</a> · <a href="#">arXiv</a> · <a href="#">slides</a></p>
+              <br/>e.g. <a href="#" aria-label="Example external link">Google Scholar</a> · <a href="#">arXiv</a> · <a href="#">slides</a></p>
             </div>
           </div>
         </div>
@@ -190,7 +201,7 @@
         </div>
         <div class="card ringed" style="padding:24px">
           <h2 id="teaching-title">Teaching & tutoring</h2>
-          <p>I teach mathematics from GCSE through undergraduate topics, focusing on problem‑solving strategies and intuition first. I’m building a library of concise primers (10–20 minutes each) that pair <em>clear visuals</em> with rigorous arguments.</p>
+          <p>I teach mathematics from GCSE through undergraduate topics, focusing on problem-solving strategies and intuition first. I’m building a library of concise primers (10–20 minutes each) that pair <em>clear visuals</em> with rigorous arguments.</p>
           <div class="two" style="margin-top:8px">
             <div>
               <ul class="list">
@@ -204,7 +215,7 @@
               <div class="card" style="padding:16px">
                 <div class="small muted">For parents & students</div>
                 <p class="small">I run an online tutoring business. Get a short diagnostic session and a tailored study plan.</p>
-                <a class="btn" href="mailto:contact@evieviner.com?subject=Tutoring%20enquiry">Book a chat</a>
+                <a class="btn" href="mailto:hello@tommacaulay.com?subject=Tutoring%20enquiry">Book a chat</a>
               </div>
             </div>
           </div>
@@ -252,7 +263,7 @@
               </div>
               <div>
                 <a href="#"><strong>Trilogarithms in disguise</strong></a>
-                <div class="muted small">On cancellations in the 22‑term identity.</div>
+                <div class="muted small">On cancellations in the 22-term identity.</div>
               </div>
             </div>
             <div>
@@ -278,11 +289,11 @@
           <div>
             <h2 id="contact-title">Let’s talk</h2>
             <p>For research, tutoring, or collaborations, email me or use the form.</p>
-            <p class="muted small">Email: <a href="mailto:contact@evieviner.com">contact@evieviner.com</a></p>
+            <p class="muted small">Email: <a href="mailto:hello@tommacaulay.com">hello@tommacaulay.com</a></p>
             <div class="link-row small">
-              <a href="#" aria-label="Open Google Scholar">Google Scholar</a>
-              <a href="#" aria-label="Open GitHub">GitHub</a>
-              <a href="#" aria-label="Open LinkedIn">LinkedIn</a>
+              <a href="https://scholar.google.com" aria-label="Open Google Scholar">Google Scholar</a>
+              <a href="https://github.com/tommacaulay" aria-label="Open GitHub">GitHub</a>
+              <a href="https://www.linkedin.com/in/tommacaulay" aria-label="Open LinkedIn">LinkedIn</a>
             </div>
           </div>
           <div>
@@ -292,9 +303,9 @@
               <label class="small" for="email">Email</label>
               <input id="email" name="email" type="email" required placeholder="ada@example.com" />
               <label class="small" for="message">Message</label>
-              <textarea id="message" name="message" required placeholder="Hello Evie, I’d like to…"></textarea>
+              <textarea id="message" name="message" required placeholder="Hello Tom, I’d like to…"></textarea>
               <button class="btn submit" type="submit">Send message</button>
-              <input type="hidden" name="_subject" value="New message from evieviner.com" />
+              <input type="hidden" name="_subject" value="New message from tommacaulay.github.io" />
             </form>
             <p class="muted small" style="margin-top:8px">Form powered by Formspree (replace the action URL with your own).</p>
           </div>
@@ -314,13 +325,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
-  <!--
-    Customize me:
-    1) Replace placeholder links (cv.pdf, Scholar, GitHub, LinkedIn, blog) and tiles in the Visualizations section.
-    2) Swap in your own color palette by editing CSS variables at the top.
-    3) Deploy quickly with GitHub Pages, Netlify, or Vercel. This file can live as /index.html in a repo.
-  -->
-
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -331,9 +336,13 @@
       "name": "Durham University"
     },
     "jobTitle": "Mathematics Student",
-    "url": "https://example.com",
-    "sameAs": ["https://github.com/yourname", "https://www.linkedin.com/in/yourname/"]
+    "url": "https://tommacaulay.github.io",
+    "sameAs": [
+      "https://github.com/tommacaulay",
+      "https://www.linkedin.com/in/tommacaulay"
+    ]
   }
   </script>
 </body>
 </html>
+
