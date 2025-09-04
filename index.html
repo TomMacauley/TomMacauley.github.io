@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evie Viner — Portfolio</title>
+  <meta name="description" content="Personal website and portfolio for Tom Macauley — mathematics student and educator." />
+  <meta property="og:title" content="Evie Viner — Portfolio" />
+  <meta property="og:description" content="Personal website and portfolio for Tom Macauley — mathematics student and educator." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    /* ---- Base & Theme ---- */
+    :root{
+      --bg: #0b1020;          /* page background */
+      --card: #111934;        /* section background */
+      --text: #e6e9f5;        /* primary text */
+      --muted: #9aa4c7;       /* secondary text */
+      --accent: #7aa4ff;      /* links + accents */
+      --ring: rgba(122,164,255,.35);
+      --grid:#10172b;         /* subtle grid lines */
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text); background: radial-gradient(1200px 600px at 10% -10%, #1d2548 0%, transparent 60%),
+                         radial-gradient(800px 400px at 110% 10%, #172040 0%, transparent 55%),
+                         linear-gradient(180deg, #0a0f1f 0%, #0b1020 100%);
+      overflow-x:hidden;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px; margin:0 auto; padding:0 24px}
+    .grid-bg{position:fixed; inset:0; background:
+      linear-gradient(transparent 95%, var(--grid) 95%),
+      linear-gradient(90deg, transparent 95%, var(--grid) 95%);
+      background-size: 32px 32px; opacity:.25; pointer-events:none; z-index:-1}
+
+    /* ---- Nav ---- */
+    .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip:focus{left:16px; top:16px; width:auto; height:auto; background:var(--card); color:var(--text); padding:.5rem .75rem; border-radius:.5rem; outline:2px solid var(--accent)}
+
+    header{position:sticky; top:0; backdrop-filter: blur(10px); background:rgba(11,16,32,.5); border-bottom:1px solid rgba(255,255,255,.06); z-index:50}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{font-weight:700; letter-spacing:.02em}
+    .brand b{font-weight:800}
+    .nav a{margin-left:18px}
+    .nav .cta{display:inline-flex; align-items:center; gap:.5rem; padding:.5rem .75rem; border-radius:.6rem; border:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.03)}
+    .nav .cta:hover{box-shadow:0 0 0 4px var(--ring)}
+
+    /* ---- Hero ---- */
+    .hero{min-height:84vh; display:grid; place-items:center; position:relative}
+    .hero-inner{display:grid; gap:16px; text-align:center}
+    .kicker{color:var(--muted); letter-spacing:.12em; text-transform:uppercase; font-size:.8rem}
+    h1{font-size: clamp(2.2rem, 4vw + 1rem, 4rem); margin:0; line-height:1.05}
+    .lead{color:var(--muted); font-size: clamp(1rem, .5vw + .9rem, 1.15rem)}
+    .hero-actions{margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.75rem 1rem; border-radius:.8rem; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); color:var(--text)}
+    .btn:hover{box-shadow:0 0 0 4px var(--ring)}
+
+    /* ---- Sections ---- */
+    section{scroll-margin-top:80px}
+    .section{padding:72px 0}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:24px; overflow:hidden}
+    .section-header{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:24px}
+    .num{font-weight:800; letter-spacing:.06em; color:#b2c1ff; opacity:.85}
+    .num span{opacity:.55}
+    h2{font-size: clamp(1.6rem, 1.5vw + 1rem, 2.2rem); margin:0}
+    p{line-height:1.7}
+
+    /* ---- Two-column content ---- */
+    .two{display:grid; grid-template-columns: 1.2fr .8fr; gap:24px}
+    @media (max-width: 900px){ .two{grid-template-columns:1fr;}}
+
+    /* ---- Lists ---- */
+    .list{display:grid; gap:12px}
+    .list a{display:inline-flex; align-items:center; gap:.5rem}
+
+    /* ---- Gallery ---- */
+    .gallery{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
+    .tile{aspect-ratio: 4 / 3; border-radius: 16px; position:relative; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
+    .tile::before{content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(122,164,255,.18), transparent)}
+    .tile span{position:absolute; left:12px; bottom:10px; font-size:.9rem; color:#e9ecff; text-shadow:0 1px 6px rgba(0,0,0,.45)}
+    .tile .ghost{position:absolute; inset:0; display:grid; place-items:center; color:var(--muted)}
+
+    /* ---- Footer ---- */
+    footer{padding:48px 0 64px; color:var(--muted)}
+
+    /* ---- Accents ---- */
+    .ringed{box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 0 0 8px rgba(122,164,255,.06)}
+    .badge{display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .55rem; border-radius:999px; font-size:.8rem; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#cbd6ff}
+    .muted{color:var(--muted)}
+    .link-row{display:flex; gap:12px; flex-wrap:wrap}
+
+    /* ---- Contact ---- */
+    form{display:grid; gap:12px}
+    input, textarea{width:100%; padding:.85rem 1rem; border-radius:.8rem; border:1px solid rgba(255,255,255,.14); background:rgba(5,8,18,.7); color:var(--text)}
+    textarea{min-height:140px; resize:vertical}
+    input:focus, textarea:focus{outline:none; box-shadow:0 0 0 4px var(--ring)}
+    .submit{cursor:pointer}
+
+    /* ---- Small print ---- */
+    .small{font-size:.92rem}
+  </style>
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <nav class="container nav" aria-label="Primary">
+      <div class="brand">EVIE <b>VINER</b></div>
+      <div class="link-row small">
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#visuals">Visualizations</a>
+        <a href="#writing">Blog</a>
+        <a href="#contact" class="cta" aria-label="Go to contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero container" id="home" aria-label="Intro">
+      <div class="hero-inner">
+        <span class="kicker">Mathematics • Durham University</span>
+        <h1>Hi, I’m <strong>Tom Macauley</strong>. I like elegant math, clear explanations, and well‑designed ideas.</h1>
+        <p class="lead">Currently exploring probabilistic processes, PDEs and mathematical physics. I also run an online math tutoring business.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#research" aria-label="Jump to research">View research</a>
+          <a class="btn" href="#contact" aria-label="Jump to contact">Get in touch</a>
+          <a class="btn" href="cv.pdf" aria-label="Open CV (PDF)">CV (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="num">01 <span>research</span></div>
+          <span class="badge">selected topics</span>
+        </div>
+        <div class="card two ringed">
+          <div style="padding:24px">
+            <h2 id="research-title">What I’m working on</h2>
+            <p>Recent work spans <strong>Markov chains</strong> on trees, <strong>WKB analysis</strong> for pattern‑forming PDEs (Swift–Hohenberg), and algebraic structures behind <strong>polylogarithm identities</strong>. I enjoy problems where asymptotics, geometry, and probability meet.</p>
+            <div class="list">
+              <div>
+                <strong>Transience on infinite trees.</strong>
+                <div class="muted small">Connections to Gambler’s Ruin and hitting probabilities.</div>
+              </div>
+              <div>
+                <strong>WKB quasimodes for Swift–Hohenberg.</strong>
+                <div class="muted small">Constructing approximate eigenfunctions under Neumann BCs.</div>
+              </div>
+              <div>
+                <strong>Trilogarithm symmetries.</strong>
+                <div class="muted small">Exploring cancellations in Goncharov’s 22‑term relation.</div>
+              </div>
+            </div>
+            <div class="link-row" style="margin-top:12px">
+              <a href="#visuals">See interactive sketches</a>
+              <a href="#writing">Read notes & posts</a>
+              <a href="mailto:contact@evieviner.com">Email questions</a>
+            </div>
+          </div>
+          <div style="background:
+               radial-gradient(120% 80% at 90% -10%, rgba(122,164,255,.18), transparent 60%),
+               linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
+               border-left:1px solid rgba(255,255,255,.08); min-height:280px; display:grid; place-items:center">
+            <div class="muted" style="padding:24px; text-align:center">
+              <div class="badge" style="margin-bottom:12px">papers & talks</div>
+              <p class="small">Link your arXiv, Google Scholar, or slides here.
+              <br/>e.g. <a href="#" aria-label="Example external link">google scholar</a> · <a href="#">arXiv</a> · <a href="#">slides</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaching -->
+    <section class="section" id="teaching" aria-labelledby="teaching-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="num">02 <span>teaching</span></div>
+          <span class="badge">learning by explaining</span>
+        </div>
+        <div class="card ringed" style="padding:24px">
+          <h2 id="teaching-title">Teaching & tutoring</h2>
+          <p>I teach mathematics from GCSE through undergraduate topics, focusing on problem‑solving strategies and intuition first. I’m building a library of concise primers (10–20 minutes each) that pair <em>clear visuals</em> with rigorous arguments.</p>
+          <div class="two" style="margin-top:8px">
+            <div>
+              <ul class="list">
+                <li><strong>General relativity (intro)</strong> — curvature without tensors.</li>
+                <li><strong>Quantum field theory (path integrals)</strong> — why actions matter.</li>
+                <li><strong>Markov chains</strong> — mixing, hitting times, and coupling.</li>
+                <li><strong>PDEs</strong> — asymptotics & pattern formation.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="card" style="padding:16px">
+                <div class="small muted">For parents & students</div>
+                <p class="small">I run an online tutoring business. Get a short diagnostic session and a tailored study plan.</p>
+                <a class="btn" href="mailto:contact@evieviner.com?subject=Tutoring%20enquiry">Book a chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visualizations -->
+    <section class="section" id="visuals" aria-labelledby="visuals-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="num">03 <span>visualizations</span></div>
+          <span class="badge">interactive demos</span>
+        </div>
+        <div class="card ringed" style="padding:24px">
+          <h2 id="visuals-title">Sketches & sandboxes</h2>
+          <p class="muted">Drop screenshots or embed links to interactive pages (Observable, JS notebooks, Desmos, etc.).</p>
+          <div class="gallery" style="margin-top:12px">
+            <a class="tile" href="#" aria-label="Open visualization 1"><span>Random walks</span><div class="ghost">(image placeholder)</div></a>
+            <a class="tile" href="#" aria-label="Open visualization 2"><span>WKB modes</span><div class="ghost">(image placeholder)</div></a>
+            <a class="tile" href="#" aria-label="Open visualization 3"><span>Polylog maps</span><div class="ghost">(image placeholder)</div></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section class="section" id="writing" aria-labelledby="writing-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="num">04 <span>writing</span></div>
+          <span class="badge">notes & posts</span>
+        </div>
+        <div class="card ringed" style="padding:24px">
+          <h2 id="writing-title">Recent posts</h2>
+          <div class="two">
+            <div class="list">
+              <div>
+                <a href="#" aria-label="Open post"><strong>Hitting probabilities on trees</strong></a>
+                <div class="muted small">A quick note connecting gambler’s ruin to transience.</div>
+              </div>
+              <div>
+                <a href="#"><strong>Swift–Hohenberg via WKB</strong></a>
+                <div class="muted small">Building quasimodes and why they’re useful.</div>
+              </div>
+              <div>
+                <a href="#"><strong>Trilogarithms in disguise</strong></a>
+                <div class="muted small">On cancellations in the 22‑term identity.</div>
+              </div>
+            </div>
+            <div>
+              <div class="card" style="padding:16px">
+                <div class="small muted">Have a Substack or blog?</div>
+                <p class="small">Point this button at your writing home.</p>
+                <a class="btn" href="#">Go to blog</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="num">05 <span>contact</span></div>
+          <span class="badge">say hi</span>
+        </div>
+        <div class="card two ringed" style="padding:24px">
+          <div>
+            <h2 id="contact-title">Let’s talk</h2>
+            <p>For research, tutoring, or collaborations, email me or use the form.</p>
+            <p class="muted small">Email: <a href="mailto:contact@evieviner.com">contact@evieviner.com</a></p>
+            <div class="link-row small">
+              <a href="#" aria-label="Open Google Scholar">Google Scholar</a>
+              <a href="#" aria-label="Open GitHub">GitHub</a>
+              <a href="#" aria-label="Open LinkedIn">LinkedIn</a>
+            </div>
+          </div>
+          <div>
+            <form action="https://formspree.io/f/your-id" method="POST">
+              <label class="small" for="name">Name</label>
+              <input id="name" name="name" required placeholder="Ada Lovelace" />
+              <label class="small" for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="ada@example.com" />
+              <label class="small" for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="Hello Evie, I’d like to…"></textarea>
+              <button class="btn submit" type="submit">Send message</button>
+              <input type="hidden" name="_subject" value="New message from evieviner.com" />
+            </form>
+            <p class="muted small" style="margin-top:8px">Form powered by Formspree (replace the action URL with your own).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="small">© <span id="year"></span> Tom Macauley • Built with semantic HTML & vanilla CSS • <a href="#home">Back to top</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!--
+    Customize me:
+    1) Replace placeholder links (cv.pdf, Scholar, GitHub, LinkedIn, blog) and tiles in the Visualizations section.
+    2) Swap in your own color palette by editing CSS variables at the top.
+    3) Deploy quickly with GitHub Pages, Netlify, or Vercel. This file can live as /index.html in a repo.
+  -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tom Macauley",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Durham University"
+    },
+    "jobTitle": "Mathematics Student",
+    "url": "https://example.com",
+    "sameAs": ["https://github.com/yourname", "https://www.linkedin.com/in/yourname/"]
+  }
+  </script>
+</body>
+</html>
