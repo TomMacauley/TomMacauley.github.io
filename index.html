@@ -70,6 +70,14 @@
     .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.50rem 1rem; border-radius:.8rem; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); color:var(--text)}
     .btn:hover{box-shadow:0 0 0 4px var(--ring)}
 
+    .side-photo {
+  width: 100%;       /* make it fill the right column width */
+  height: 100%;      /* make it fill height of the card */
+  object-fit: cover; /* crop nicely instead of stretching */
+  border-radius: 24px; /* match your card style */
+}
+
+
     /* ---- Sections ---- */
     section{scroll-margin-top:80px}
     .section{padding:25px 0}
@@ -140,31 +148,51 @@
     </section>
 
     <!-- Research -->
-    <section class="section" id="research" aria-labelledby="research-title">
-      <div class="container">
-        <div class="section-header">
-          <div class="num">1 <span>Projects and Juvenilia</span></div>
-        </div>
-        <div class="card two ringed">
-          <div style="padding:24px">
-            <div class="list">
-              <div>
-                <strong>Analysis of the WKB Eigenfunction Approximation for the Linearised Swift–Hohenberg Operator</strong>
-                <div class="muted small">Analysis, Spectral Theory, PDE Theory, Quasimodes.</div>
-                <a href="papers/WKBfinal.pdf" target="_blank">[PDF]</a>
-              </div>
-              <div>
-                <strong>From the 840-Term Functional Equation to Goncharov’s 22-Term Relation for the Trilogarithm</strong>
-                <div class="muted small">Geometry of Configurations, Polylogarithms, Functional Equations.</div>
-                <a href="papers/Trilogfinal.pdf" target="_blank">[PDF]</a>
-              </div>
-              <div>
-                <strong>Applications of Analytic Continuation to PDE’s, Topology, Theoretical Physics and More</strong>
-                <div class="muted small">Complex Analysis, Physics, Topology and more</div>
-                <a href="papers/AnalyticContinuationfinal.pdf" target="_blank">[PDF]</a>
-              </div>
+<section class="section" id="research" aria-labelledby="research-title">
+  <div class="container">
+    <div class="section-header">
+      <div class="num">1 <span>Projects and Juvenilia</span></div>
+    </div>
+
+    <!-- Two-column grid -->
+    <div class="two">
+      
+      <!-- LEFT: Research list -->
+      <div class="card ringed">
+        <div style="padding:24px">
+          <div class="list">
+
+            <div>
+              <strong>Analysis of the WKB Eigenfunction Approximation for the Linearised Swift–Hohenberg Operator</strong>
+              <div class="muted small">Analysis, Spectral Theory, PDE Theory, Quasimodes.</div>
+              <a href="papers/WKBfinal.pdf" target="_blank">[PDF]</a>
             </div>
-    </section>
+
+            <div>
+              <strong>From the 840-Term Functional Equation to Goncharov’s 22-Term Relation for the Trilogarithm</strong>
+              <div class="muted small">Geometry of Configurations, Polylogarithms, Functional Equations.</div>
+              <a href="papers/Trilogfinal.pdf" target="_blank">[PDF]</a>
+            </div>
+
+            <div>
+              <strong>Applications of Analytic Continuation to PDE’s, Topology, Theoretical Physics and More</strong>
+              <div class="muted small">Complex Analysis, Physics, Topology and more</div>
+              <a href="papers/AnalyticContinuationfinal.pdf" target="_blank">[PDF]</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Photo -->
+      <div class="card">
+        <img src="images/profile.jpg" alt="Profile photo" class="side-photo">
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Teaching -->
     <section class="section" id="teaching" aria-labelledby="research-title">
