@@ -85,6 +85,18 @@
     h2{font-size: clamp(1.6rem, 1.5vw + 1rem, 2.2rem); margin:0}
     p{line-height:1.7}
 
+    /* make both cards the same size */
+#research .card.ringed,
+#teaching .card.ringed {
+  width: 100%;
+  min-height: clamp(360px, 40vh, 520px); /* pick the range you like */
+  padding: 24px;                         /* keep padding consistent */
+  border-radius: 24px;                   /* same rounding */
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+
+    
     /* ---- Two-column content ---- */
    .two {display: grid;grid-template-columns: 1fr; /* one full-width column */}
 
